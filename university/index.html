@@ -1,0 +1,152 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Student University</title>
+<link type="text/css" rel="stylesheet" href="css/index_style.css">
+<link rel="shortcut icon" href="images/logo.png">
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <table>
+    <tr>
+      <td>
+        <img class="logo" src="images/logo.png" alt="Student University" height="130px">
+      </td>
+      <td>
+        <center>
+            <p style="font-size:2vw; " class="name">STUDENTS</p>
+        <p style="font-size:2vw; " class="name">UNIVERSITY</p>
+        <p style="font-size:1vw; " class="slogan">We Will Rise Up. We Will Shine</p>
+        <p style="font-size:1vw; " class="estd">ESTD. 2019</p>
+      </center>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form name="reg" action="reg.php" method="post" onsubmit="return check_reg();">
+			<h1>Create Account</h1>
+			<span>Use your email for registration</span>
+      <input type="text" name="name" placeholder="Name">
+			<input type="text" name="user" placeholder="Username" />
+			<input type="password" name="pass" placeholder="Password" />
+			<input type="password" name="cnfrmpass" placeholder="Confirm Password" />
+			<input type="email" name="email" placeholder="Email ID" />
+			<button>Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form name="login" action="login.php" method="post" onsubmit="return check_login();">
+			<h1>Login</h1>
+			<span>Use your account</span>
+			<input type="text" name="login_user" placeholder="Username" />
+			<input type="password" name="login_pass" placeholder="Password" />
+			<a href="forgotpassword.html">Forgot your password?</a>
+			<button>Login</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Login</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start your journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+function check_reg(){
+  if (document.reg.name.value=="") {
+    alert("Enter Your Name");
+    return false;
+  }
+  if (/^\w+$/.test(document.reg.user.value)==false) {
+    alert("Enter A Valid Username");
+    return false;
+  }
+  if (document.reg.pass.value=="") {
+    alert("Password Cannot Be Empty");
+    return false;
+  }
+  if (document.reg.pass.value.length<6) {
+    alert("Password Must Be Of Atleast 6 Charecters");
+    return false;
+  }
+  if (document.reg.cnfrmpass.value=="") {
+    alert("Enter Password Again To Confirm");
+    return false;
+  }
+  if (document.reg.pass.value!=document.reg.cnfrmpass.value) {
+    alert("Password Does Not Match");
+    return false;
+  }
+  if (document.reg.email.value=="") {
+    alert("Email Cannot Be Empty");
+    return false;
+  }
+  return true;
+}
+function check_login(){
+  if (/^\w+$/.test(document.login.login_user.value)==false) {
+    alert("Enter A Valid Username");
+    return false;
+  }
+  if (document.login.login_pass.value=="") {
+    alert("Password Cannot Be Empty");
+    return false;
+  }
+  if (document.login.login_pass.value.length<6) {
+    alert("Password Must Be Of Atleast 6 Charecters");
+    return false;
+  }
+  return true;
+}
+
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+
+</script>
+
+</body>
+</html>
