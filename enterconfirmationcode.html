@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Password Recovery</title>
+    <link rel="stylesheet" href="css/forgotpassword_style.css" type="text/css">
+    <link rel="shortcut icon" href="images/logo.png">
+  <style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+</style>
+  </head>
+  <body>
+    <div class="head">
+      <table>
+        <tr>
+          <td>
+            <img class="logo" src="images/logo.png" alt="Student University" height="130px">
+          </td>
+          <td>
+            <center>
+          <p style="font-size:2vw; " class="name">STUDENTS</p>
+          <p style="font-size:2vw; " class="name">UNIVERSITY</p>
+          <p style="font-size:1vw; " class="slogan">We Will Rise Up. We Will Shine</p>
+          <p style="font-size:1vw; " class="estd">ESTD. 2019</p>
+        </center>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="container">
+      <center>
+        <h1>Enter Confirmation Code</h1>
+        <p>Confirmation Code Sent To Your Email ID</p>
+      </center>
+      <form name="enterconfirmationcode" action="enterconfirmationcode.php" method="post" onsubmit="return check_enterconfirmationcode();">
+        <input type="text" name="code" placeholder="Enter Confirmation Code" maxlength="4">
+        <button>Verify</button>
+      </form>
+    </div>
+    <script type="text/javascript">
+      function check_enterconfirmationcode(){
+        if (document.enterconfirmationcode.code.value=="") {
+          alert("Please Enter The Code");
+          return false;
+        }
+        if (/^\d{4}$/.test(document.enterconfirmationcode.code.value)==false) {
+          alert("Please Enter Valid Code");
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+
+  </body>
+</html>

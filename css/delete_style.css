@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Lexend+Zetta&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	height: 100vh;
+	margin: 0;
+        padding: 0;
+	overflow: hidden;
+        background-image: repeating-linear-gradient(45deg, rgb(46, 49, 146), rgb(75, 84, 213), rgb(46, 49, 146) 10%);
+}
+
+.head{
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 250px;
+	width: 100%;
+	background-image: linear-gradient(rgba(41, 108, 187, 0.9) 25%, skyblue);
+}
+
+
+.logo{
+  border-radius: 20px;
+  max-width: 100%;
+}
+
+.name, .slogan, .estd{
+  line-height: 5px;
+}
+.name {
+	font-family: 'Lexend Zetta', sans-serif;
+	font-weight: bold;
+	color: rgb(46, 49, 146);
+}
+
+.slogan, .estd{
+	color: rgb(46, 49, 146);
+	font-family: 'Montserrat', sans-serif;
+}
+
+.nav{
+  width: 100%;
+  background-color: rgb(46, 49, 146);
+  margin: 0;
+  padding: 0;
+  position: sticky;
+  top: 0;
+}
+
+.nav_ele{
+  display: inline-block;
+  margin: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-align: center;
+  text-decoration: none;
+  height: auto;
+  padding: 20px;
+}
+
+.nav_ele:hover{
+  background-color: white;
+  color: rgb(46, 49, 146);
+  transition: 0.3s;
+}
+
+#active{
+  background-color: white;
+  color: rgb(46, 49, 146);
+  pointer-events: none;
+}
+
+#logout{
+  float: right;
+  background-color: red;
+  border-radius: 20px;
+  padding: 10px 20px 12px 20px;
+  margin: 9px 30px;
+}
+
+#logout:hover{
+  background-color: white;
+  color: red;
+  transition: 0.3s;
+}
+.nav .icon {
+  display: none;
+  font-size: 50px;
+  color: white;
+}
+@media screen and (max-width: 992px) {
+  .nav a:not(:first-child){
+      display: none;
+  }
+  .nav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .nav.responsive {position: relative;}
+  .nav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .nav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.page{
+  
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 20px 0;}
+
+.insert{
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+  width: 480px;
+  background-color: white;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+		0 10px 10px rgba(0,0,0,0.22);
+  border-radius: 20px;
+  padding-bottom: 10px;
+  height: auto;
+  max-width: 100%;
+}
+
+h1 {
+	font-weight: bold;
+	margin: 20px;
+}
+
+form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 10px 50px;
+	height: 100%;
+	text-align: center;
+}
+
+input {
+	background-color: #eee;
+	border: 1px solid #eee;
+	border-radius: 20px;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+}
+
+button {
+	border-radius: 20px;
+	border: 1px solid rgb(46, 49, 146);
+	background-color: rgb(46, 49, 146);
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+button:focus {
+	outline: none;
+}

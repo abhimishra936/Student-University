@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome | Student University</title>
+    <link rel="shortcut icon" href="images/logo.png">
+    <link rel="stylesheet" href="css/dashboard_style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+</style>
+  </head>
+  <body>
+  <div class="head">
+    <table>
+      <tr>
+        <td>
+          <img class="logo" src="images/logo.png" alt="Student University" height="150px">
+        </td>
+        <td>
+          <center>
+          <p style="font-size:3vw; " class="name">STUDENTS</p>
+          <p style="font-size:3vw; " class="name">UNIVERSITY</p>
+          <p style="font-size:1.5vw; " class="slogan">We Will Rise Up. We Will Shine</p>
+          <p style="font-size:1.5vw; " class="estd">ESTD. 2019</p>
+        </center>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="nav" id="mynav">
+    <a id="active" class="nav_ele" href="dashboard.html"><i class="fa fa-home"></i> HOME</a>
+    <a class="nav_ele" href="insert.html"><i class="fa fa-user-plus"></i> INSERT</a>
+    <a class="nav_ele" href="delete.html"><i class="fa fa-user-times"></i> DELETE</a>
+    <a class="nav_ele" href="edit.html"><i class="fa fa-edit"></i> EDIT</a>
+    <a class="nav_ele" href="search.html"><i class="fa fa-search"></i> SEARCH</a>
+    <a id="logout" class="nav_ele" href="index.html"><i class="fa fa-sign-out"></i> Logout</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+    </a>
+  </div>
+      <script>
+function myFunction() {
+  var x = document.getElementById("mynav");
+  if (x.className === "nav") {
+    x.className += " responsive";
+  } else {
+    x.className = "nav";
+  }
+}
+</script>
+
+    <div class="options">
+      <table>
+        <tr>
+          <td>
+            <a href="insert.html">
+            <div class="insert">
+                <i class="fa fa-user-plus"></i><br>
+                INSERT <br>RECORDS
+            </div>
+            </a>
+          </td>
+          <td>
+            <a href="delete.html">
+            <div class="delete">
+                <i class="fa fa-user-times"></i><br>
+                DELETE <br> RECORDS
+            </div>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="edit.html">
+            <div class="edit">
+                <i class="fa fa-edit"></i><br>
+                EDIT <br> RECORDS
+            </div>
+            </a>
+          </td>
+          <td>
+            <a href="search.html">
+            <div class="search">
+                <i class="fa fa-search"></i><br>
+                SEARCH <br> RECORDS
+            </div>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
